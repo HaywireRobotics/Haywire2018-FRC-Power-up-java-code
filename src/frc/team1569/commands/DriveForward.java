@@ -17,10 +17,7 @@ public class DriveForward extends Command {
         this.time = new Timer();
         this.seconds = seconds;
         this.speed = speed;
-        if (seconds < 0 )
-            this.negative = false;
-        else
-            this.negative = true;
+        this.negative = (seconds < 0);
     }
 
     @Override

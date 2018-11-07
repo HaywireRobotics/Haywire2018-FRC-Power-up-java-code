@@ -17,7 +17,7 @@ import frc.team1569.commands.*;
 import frc.team1569.subsystems.*;
 
 // If you rename or move this class, update the build.properties file in the project root
-public class Robot extends TimedRobot 
+public class Robot extends TimedRobot
 {
 
     public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
@@ -51,13 +51,13 @@ public class Robot extends TimedRobot
     public void disabledPeriodic() { Scheduler.getInstance().run(); }
 
     @Override
-    public void autonomousInit() 
+    public void autonomousInit()
     {
         autonomousCommand = autoChooser.getSelected();
 
         Robot.gameData = DriverStation.getInstance().getGameSpecificMessage();
 
-        if (autonomousCommand != null) 
+        if (autonomousCommand != null)
         {
             autonomousCommand.start();
         }
@@ -67,9 +67,9 @@ public class Robot extends TimedRobot
     public void autonomousPeriodic() { Scheduler.getInstance().run(); }
 
     @Override
-    public void teleopInit() 
+    public void teleopInit()
     {
-        if (autonomousCommand != null) 
+        if (autonomousCommand != null)
         {
             autonomousCommand.cancel();
         }
